@@ -1,0 +1,466 @@
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E01.mp3':
+  Metadata:
+    track           : 1
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    title           : Simpsons Roasting on an Open Fire S1 E1
+    encoder         : Lavf62.12.102
+  Duration: 00:23:12.82, start: 0.050111, bitrate: 34 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 31 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TRCK            : 1
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TIT2            : Simpsons Roasting on an Open Fire S1 E1
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 31 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 0000013082b0b7c0] video:467KiB audio:233KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.055699%
+frame=    1 fps=0.0 q=-1.0 Lsize=     700KiB time=-00:00:00.00 bitrate=N/A speed=N/A elapsed=0:00:00.02    
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E02.mp3':
+  Metadata:
+    title           : Bart the Genius S1 E2
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    track           : 2
+    encoder         : Lavf62.12.102
+  Duration: 00:23:06.76, start: 0.050111, bitrate: 31 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 28 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TIT2            : Bart the Genius S1 E2
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TRCK            : 2
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 28 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 0000022aa84e9700] video:467KiB audio:219KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.054258%
+frame=    1 fps=0.0 q=-1.0 Lsize=     686KiB time=-00:00:00.01 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E03.mp3':
+  Metadata:
+    title           : Homer's Odyssey S1 E3
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    track           : 3
+    encoder         : Lavf62.12.102
+  Duration: 00:23:10.94, start: 0.050111, bitrate: 29 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 26 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TIT2            : Homer's Odyssey S1 E3
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TRCK            : 3
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 26 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 0000022377c886c0] video:467KiB audio:196KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.056193%
+frame=    1 fps=0.0 q=-1.0 Lsize=     663KiB time=-00:00:00.01 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+clip_start_millis 702189
+clip_start_timestamp 00:11:42
+audio_start_time 00:11:42
+match_start_timestamp 00:12:12
+frinkiac start time 00:12:12
+clip_start_millis 664694
+clip_start_timestamp 00:11:04
+audio_start_time 00:11:04
+match_start_timestamp 00:11:48
+frinkiac start time 00:11:34
+Traceback (most recent call last):
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 192, in <module>
+    offset, timestamp = getOffset(episode)
+                        ^^^^^^^^^^^^^^^^^^
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 144, in getOffset
+    print("target", target, file=testfile, flush=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u266a' in position 2: character maps to <undefined>
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E01.mp3':
+  Metadata:
+    track           : 1
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    title           : Simpsons Roasting on an Open Fire S1 E1
+    encoder         : Lavf62.12.102
+  Duration: 00:23:12.82, start: 0.050111, bitrate: 34 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 31 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TRCK            : 1
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TIT2            : Simpsons Roasting on an Open Fire S1 E1
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 31 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 0000016c60baa100] video:467KiB audio:233KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.055699%
+frame=    1 fps=0.0 q=-1.0 Lsize=     700KiB time=-00:00:00.00 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+Traceback (most recent call last):
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 195, in <module>
+    offset, timestamp = getOffset(episode)
+                        ^^^^^^^^^^^^^^^^^^
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 90, in getOffset
+    segments, info = model.transcribe(
+                     ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Guest1\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\faster_whisper\transcribe.py", line 876, in transcribe
+    audio = decode_audio(audio, sampling_rate=sampling_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Guest1\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\faster_whisper\audio.py", line 46, in decode_audio
+    with av.open(input_file, mode="r", metadata_errors="ignore") as container:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "av/container/core.py", line 578, in av.container.core.open
+    return InputContainer(
+^^^^^^^
+  File "av/container/core.py", line 344, in av.container.core.Container.__cinit__
+    self.err_check(res)
+^^^
+  File "av/container/core.py", line 369, in av.container.core.Container.err_check
+    return err_check(value, filename=self.name)
+^^^^^^^
+  File "av/error.py", line 354, in av.error.err_check
+    raise cls(code, message, filename, log)
+^^^^^^^
+av.error.FileNotFoundError: [Errno 2] No such file or directory: 'S01E01.mp3'
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E01.mp3':
+  Metadata:
+    track           : 1
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    title           : Simpsons Roasting on an Open Fire S1 E1
+    encoder         : Lavf62.12.102
+  Duration: 00:23:12.82, start: 0.050111, bitrate: 34 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 31 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TRCK            : 1
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TIT2            : Simpsons Roasting on an Open Fire S1 E1
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 31 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 000002b970b9bb00] video:467KiB audio:233KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.055699%
+frame=    1 fps=0.0 q=-1.0 Lsize=     700KiB time=-00:00:00.00 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E01.mp3':
+  Metadata:
+    track           : 1
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    title           : Simpsons Roasting on an Open Fire S1 E1
+    encoder         : Lavf62.12.102
+  Duration: 00:23:12.82, start: 0.050111, bitrate: 34 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 31 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TRCK            : 1
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TIT2            : Simpsons Roasting on an Open Fire S1 E1
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 31 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 000001da2f829580] video:467KiB audio:233KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.055699%
+frame=    1 fps=0.0 q=-1.0 Lsize=     700KiB time=-00:00:00.00 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+clip_start_millis 702189
+clip_start_timestamp 00:11:42
+audio_start_time 00:11:42
+match_start_timestamp 00:23:54
+frinkiac start time 00:12:12
+Traceback (most recent call last):
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 196, in <module>
+    offset, timestamp = getOffset(episode)
+                        ^^^^^^^^^^^^^^^^^^
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 170, in getOffset
+    return int(subtitle_start - chosenSubtitle["StartTimestamp"], subtitle_start)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: int() base must be >= 2 and <= 36, or 0
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E01.mp3':
+  Metadata:
+    track           : 1
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    title           : Simpsons Roasting on an Open Fire S1 E1
+    encoder         : Lavf62.12.102
+  Duration: 00:23:12.82, start: 0.050111, bitrate: 34 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 31 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TRCK            : 1
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TIT2            : Simpsons Roasting on an Open Fire S1 E1
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 31 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 0000016e364eaf00] video:467KiB audio:233KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.055699%
+frame=    1 fps=0.0 q=-1.0 Lsize=     700KiB time=-00:00:00.00 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+clip_start_millis 702189
+clip_start_timestamp 00:11:42
+audio_start_time 00:11:42
+match_start_timestamp 00:23:54
+frinkiac start time 00:12:12
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E02.mp3':
+  Metadata:
+    title           : Bart the Genius S1 E2
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    track           : 2
+    encoder         : Lavf62.12.102
+  Duration: 00:23:06.76, start: 0.050111, bitrate: 31 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 28 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TIT2            : Bart the Genius S1 E2
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TRCK            : 2
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 28 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 000002cb25f3af80] video:467KiB audio:219KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.054258%
+frame=    1 fps=0.0 q=-1.0 Lsize=     686KiB time=-00:00:00.01 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+clip_start_millis 664694
+clip_start_timestamp 00:11:04
+audio_start_time 00:11:04
+match_start_timestamp 00:12:59
+frinkiac start time 00:11:34
+ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mp3, from '../simp-backend/audio/S01E03.mp3':
+  Metadata:
+    title           : Homer's Odyssey S1 E3
+    artist          : The Simpsons
+    album           : The Simpsons Audio
+    genre           : Comedy
+    disc            : 1
+    track           : 3
+    encoder         : Lavf62.12.102
+  Duration: 00:23:10.94, start: 0.050111, bitrate: 29 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 22050 Hz, mono, fltp, 26 kb/s, start 0.050113
+  Stream #0:1: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, 90k tbr, 90k tbn, start 0.050111 (attached pic)
+    Metadata:
+      comment         : Other
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Output #0, mp3, to 'clip.mp3':
+  Metadata:
+    TIT2            : Homer's Odyssey S1 E3
+    TPE1            : The Simpsons
+    TALB            : The Simpsons Audio
+    TCON            : Comedy
+    TPOS            : 1
+    TRCK            : 3
+    TSSE            : Lavf62.12.102
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 700x700, q=2-31, 90k tbr, 90k tbn (attached pic)
+    Metadata:
+      comment         : Other
+  Stream #0:1: Audio: mp3, 22050 Hz, mono, fltp, 26 kb/s
+Press [q] to stop, [?] for help
+[out#0/mp3 @ 000002a13f903bc0] video:467KiB audio:196KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.056193%
+frame=    1 fps=0.0 q=-1.0 Lsize=     663KiB time=-00:00:00.01 bitrate=N/A speed=N/A elapsed=0:00:00.01    
+Traceback (most recent call last):
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 196, in <module>
+    offset, timestamp = getOffset(episode)
+                        ^^^^^^^^^^^^^^^^^^
+  File "E:\Programming Projects\simpsons\sync\sync.py", line 147, in getOffset
+    print("target", target, file=testfile, flush=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u266a' in position 2: character maps to <undefined>

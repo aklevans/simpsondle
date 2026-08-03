@@ -1,0 +1,11 @@
+S01E01
+(np.float64(732.56), " you're  not  really  santa  tubby  why  you  little -", 0.8245614035087719)
+target ['-', "you're", 'not', 'really', 'santa,', 'tubby.', '-', 'why,', 'you', 'little', 'egghead!']
+
+S01E02
+(np.float64(114.84), ' oh', 0.6666666666666666)
+target ['oh!']
+
+S01E03
+(np.float64(179.74), ' about  enough  of  your  tom  fularee  i', 0.5238095238095238)
+target 
