@@ -21,8 +21,14 @@ export default function Clipgen() {
   const [secondVideoUrl, setSecondVideoUrl] = useState(null);
   const secondVideoRef = useRef(null);
 
+  const [savingFirst, setSavingFirst] = useState(false);
+  const [firstSaveStatus, setFirstSaveStatus] = useState(null);
 
-  
+  const [savingSecond, setSavingSecond] = useState(false);
+  const [secondSaveStatus, setSecondSaveStatus] = useState(null);
+
+
+
   const [questionId, setQuestionId] = useState("");
   const updateField = (field) => (e) => {
     setForm((prev) => ({
@@ -37,13 +43,14 @@ export default function Clipgen() {
 
   const getFirst = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8000/video/${form.episode}/${form.startTimestamp}/${form.middleTimestamp}`).then((response) => {
+    fetch(`http://localhost:8001/video/${form.episode}/${form.startTimestamp}/${form.middleTimestamp}`).then((response) => {
       // const index = response.headers.get("simp-quiz-index");
       // setQuestionId(index);
       return response.blob();
     }).then(blob => {
       const url = URL.createObjectURL(blob);
       setFirstVideoUrl(url);
+      
 
     }).catch(error => {
       console.log(error);
@@ -52,9 +59,7 @@ export default function Clipgen() {
 
   const getSecond = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8000/video/${form.episode}/${form.startTimestamp}/${form.endTimestamp}`).then((response) => {
-      // const index = response.headers.get("simp-quiz-index");
-      // setQuestionId(index);
+    fetch(`http://localhost:8001/video/${form.episode}/${form.startTimestamp}/${form.endTimestamp}`).then((response) => {
       return response.blob();
     }).then(blob => {
       const url = URL.createObjectURL(blob);
@@ -63,6 +68,55 @@ export default function Clipgen() {
     }).catch(error => {
       console.log(error);
     })
+  }
+
+  const saveClipToR2 = (start, end, filename, setSaving, setStatus) => {
+    setSaving(true);
+    setStatus(null);
+    fetch(`http://localhost:8001/video/save`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        episode: form.episode,
+        start: Number(start),
+        end: Number(end),
+        filename,
+      })
+    }).then((response) => {
+      if (!response.ok) throw new Error(`Upload failed with status ${response.status}`);
+      return response.json();
+    }).then(() => {
+      setStatus('success');
+    }).catch(error => {
+      console.log(error);
+      setStatus('error');
+    }).finally(() => {
+      setSaving(false);
+    });
+  }
+
+  const saveFirstToR2 = (e) => {
+    e.preventDefault();
+    saveClipToR2(
+      form.startTimestamp,
+      form.middleTimestamp,
+      `${form.episode}-${form.startTimestamp}-${form.middleTimestamp}.mp4`,
+      setSavingFirst,
+      setFirstSaveStatus
+    );
+  }
+
+  const saveSecondToR2 = (e) => {
+    e.preventDefault();
+    saveClipToR2(
+      form.startTimestamp,
+      form.endTimestamp,
+      `${form.episode}-${form.startTimestamp}-${form.endTimestamp}.mp4`,
+      setSavingSecond,
+      setSecondSaveStatus
+    );
   }
 
   const saveToDB = (e) => {
@@ -88,8 +142,6 @@ export default function Clipgen() {
     })
   }
   
-
-
   useEffect(() => {
     if (firstVideoRef.current) {
       firstVideoRef.current.load();
@@ -197,6 +249,15 @@ export default function Clipgen() {
           </video>
         )}
         {form.episode}-{form.startTimestamp}-{form.middleTimestamp}
+        {firstVideoUrl && (
+          <div>
+            <button onClick={saveFirstToR2} className="btn btn-primary" disabled={savingFirst}>
+              {savingFirst ? "Saving…" : "Save to R2"}
+            </button>
+            {firstSaveStatus === 'success' && <span> Saved!</span>}
+            {firstSaveStatus === 'error' && <span> Failed to save.</span>}
+          </div>
+        )}
 
         {secondVideoUrl && (
           <video ref={secondVideoRef} controls width="600">
@@ -205,6 +266,15 @@ export default function Clipgen() {
           </video>
         )}
         {form.episode}-{form.startTimestamp}-{form.endTimestamp}
+        {secondVideoUrl && (
+          <div>
+            <button onClick={saveSecondToR2} className="btn btn-primary" disabled={savingSecond}>
+              {savingSecond ? "Saving…" : "Save to R2"}
+            </button>
+            {secondSaveStatus === 'success' && <span> Saved!</span>}
+            {secondSaveStatus === 'error' && <span> Failed to save.</span>}
+          </div>
+        )}
       </section>
 
 
