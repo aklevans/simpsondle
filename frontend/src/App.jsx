@@ -6,10 +6,8 @@ import Home from './pages/Home'
 function Layout() {
   return (
     <div>
-      <nav style={{ display: 'flex', gap: '15px', padding: '10px', background: '#eee' }}>
-        {/* Always use the <Link> component instead of <a href> to avoid refreshing the browser */}
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+      <nav>
+        <h1>Simpsondle</h1>
       </nav>
       <main>
         {/* <Outlet> dynamically renders whichever child route is currently active */}

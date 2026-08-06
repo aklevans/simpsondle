@@ -4,8 +4,8 @@
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #FFD90F;
-  --accent-bg: #FFD90F;
+  --accent: #8ba4d5;
+  --accent-bg: ##8ba4d5;
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
@@ -19,7 +19,7 @@
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
-  background: #835091
+  background: #835091;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -50,6 +50,27 @@
   }
 }
 
+@font-face {
+  font-family: 'simpsonfont';
+  src: url('/fonts/Simpsonfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Prevents text from being invisible while loading */
+}
+
+nav h1 {
+      font-family: 'simpsonfont', sans-serif;
+      color: #FFD90F;
+
+}
+
+.white-simp-text {
+    font-family: 'simpsonfont', sans-serif;
+    color: white;
+    size: 10px
+}
+
+
 body {
   margin: 0;
 }
@@ -59,7 +80,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  /* border-inline: 1px solid var(--border); */
   min-height: 100svh;
   display: flex;
   flex-direction: column;

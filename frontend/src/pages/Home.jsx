@@ -15,6 +15,11 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
 
+  const [episodeAnswer, setEpisodeAnswer] = useState("");
+  const [episodeResponse, setEpisodeResponse] = useState(null);
+  const [isSubmittingEpisode, setIsSubmittingEpisode] = useState(false);
+  const [episodeError, setEpisodeError] = useState(null);
+
 
   const [searchParams] = useSearchParams();
   const questionID = searchParams.get("questionID");
@@ -24,6 +29,9 @@ export default function Home() {
     setError(null);
     setResponse(null);
     setAnswer("");
+    setEpisodeAnswer("");
+    setEpisodeResponse(null);
+    setEpisodeError(null);
 
     let url=`${backendURL}/quiz`;
 
@@ -90,6 +98,35 @@ export default function Home() {
     });
   }
 
+  const handleEpisodeGuess = (e) => {
+    e.preventDefault();
+    if (!question || !episodeAnswer.trim() || isSubmittingEpisode) return;
+
+    setIsSubmittingEpisode(true);
+    setEpisodeError(null);
+    const body = {
+      episodeName: episodeAnswer,
+      questionID: question.questionID
+    };
+
+    fetch(`${backendURL}/quiz/episode`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }, body: JSON.stringify(body)
+    }).then((res) => {
+      return res.json();
+    }).then(data => {
+      console.log(data);
+      setEpisodeResponse(data);
+    }).catch(error => {
+      console.log(error);
+      setEpisodeError("Couldn't check your answer. Please try again.");
+    }).finally(() => {
+      setIsSubmittingEpisode(false);
+    });
+  }
+
   const videoSrc = question
     ? `${r2URL}/${response ? response.video_url : question.video_url}`
     : null;
@@ -125,9 +162,6 @@ export default function Home() {
               </video>
             </div>
 
-            {question.question && (
-              <p className="quiz-prompt">"{question.question}"</p>
-            )}
 
             {!response && (
               <form className="quiz-form" onSubmit={handleGuess}>
@@ -161,13 +195,62 @@ export default function Home() {
                   {response.isCorrect ? "Correct!" : "Not quite"}
                 </div>
                 {!response.isCorrect && (
-                  <p className="quiz-answer-reveal">
+                  <p className="quiz-answer-reveal white-simp-text">
                     The line was: <strong>"{response.answer}"</strong>
                   </p>
                 )}
-                <button className="quiz-btn quiz-btn-primary" onClick={fetchQuestion}>
-                  Next Clip
-                </button>
+
+                {!episodeResponse && (
+                  <form className="quiz-form" onSubmit={handleEpisodeGuess}>
+                    <label className="quiz-label" htmlFor="episode-guess-input">
+                      Bonus: which episode is this from?
+                    </label>
+                    <input
+                      id="episode-guess-input"
+                      type="text"
+                      className="quiz-input"
+                      value={episodeAnswer}
+                      onChange={(e) => setEpisodeAnswer(e.target.value)}
+                      placeholder="Type the episode name…"
+                      autoComplete="off"
+                      disabled={isSubmittingEpisode}
+                    />
+                    {episodeError && <p className="quiz-inline-error">{episodeError}</p>}
+                    <div className="quiz-form-actions">
+                      <button
+                        type="submit"
+                        className="quiz-btn quiz-btn-primary"
+                        disabled={isSubmittingEpisode || !episodeAnswer.trim()}
+                      >
+                        {isSubmittingEpisode ? "Checking…" : "Guess Episode"}
+                      </button>
+                      <button
+                        type="button"
+                        className="quiz-btn quiz-btn-secondary"
+                        onClick={fetchQuestion}
+                        disabled={isSubmittingEpisode}
+                      >
+                        Skip
+                      </button>
+                    </div>
+                  </form>
+                )}
+
+                {episodeResponse && (
+                  <>
+                    <div className={`quiz-result-banner white-simp-text ${episodeResponse.isCorrect ? 'is-correct' : 'is-incorrect'}`}>
+                      {episodeResponse.isCorrect ? "Correct episode!" : "Not quite"}
+                    </div>
+                    {!episodeResponse.isCorrect && (
+                      <p className="quiz-answer-reveal white-simp-text">
+                        The episode was: <strong>"{episodeResponse.answer}"</strong>
+                      </p>
+                    )}
+                    <button className="quiz-btn quiz-btn-primary" onClick={fetchQuestion}>
+                      Next Clip
+                    </button>
+                  </>
+                )}
               </div>
             )}
           </>
