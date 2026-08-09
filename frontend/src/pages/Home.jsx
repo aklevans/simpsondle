@@ -133,8 +133,9 @@ export default function Home() {
 
   return (
     <section id="center" className="quiz-page">
-      <h1>CI/CD works!</h1>
+      
       <div className="quiz-card">
+        <h1>CI/CD works!</h1>
         {isLoadingQuestion && (
           <div className="quiz-loading">
             <div className="quiz-spinner" />
