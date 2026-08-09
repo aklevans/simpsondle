@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from routers.videos import router as videos_router
+from routers.questions import router as questions_router
 
 from fastapi.middleware.cors import CORSMiddleware
 from db_config import db
@@ -18,6 +19,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.include_router(videos_router, prefix="/video",)
+app.include_router(questions_router, prefix="/question",)
 
 
 
