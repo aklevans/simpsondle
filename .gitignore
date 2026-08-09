@@ -2,3 +2,6 @@
 **/node_modules
 ./clips/**
 **/.venv
+**/.aws-sam
+**/__pycache__
+**/samconfig.toml

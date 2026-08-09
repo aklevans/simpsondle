@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+routers/__pycache__/
+*.pyc
+audio/
+.env
+.env.example
+.git/
+.gitignore
+Untitled-1.txt
+Dockerfile
+template.yml
+requirements-dev.txt
