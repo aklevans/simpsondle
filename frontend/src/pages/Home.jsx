@@ -156,7 +156,7 @@ export default function Home() {
             <div className="quiz-video-wrap">
               <img src="/images/simpson_tv.png"/>
 
-              <video ref={videoRef} controls className="quiz-video">
+              <video ref={videoRef} controls playsinline className="quiz-video">
                 <source src={videoSrc} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
