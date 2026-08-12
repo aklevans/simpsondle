@@ -10,11 +10,15 @@ import string
 from peewee import fn
 from typing import Optional
 from main import limiter
+from fastapi import HTTPException
+
 
 import os
 
 from google import genai
 from google.genai import types
+from google.genai.errors import ClientError
+
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
@@ -31,7 +35,6 @@ DESCRIBE_TYPE="DESCRIBE"
 
 
 
-@limiter.limit("15/minute")
 @router.get("")
 async def get_quiz(request: Request, questionID: Optional[str] = None):
     if(questionID):
@@ -54,6 +57,8 @@ class Guess(BaseModel):
     questionID: int
     answer: str
     
+
+@limiter.limit("20/minute")
 @router.post("")
 async def check_guess(guess: Guess):
     question=Question.get_by_id(guess.questionID)
@@ -68,7 +73,13 @@ async def check_guess(guess: Guess):
         }
     
     if(question.type == DESCRIBE_TYPE):
-        ret["isCorrect"] = gemini_compare(guess.answer, question.answer);
+        try:
+            ret["isCorrect"] = gemini_compare(guess.answer, question.answer);
+        except ClientError as e:
+            raise HTTPException(
+                status_code=503,
+                detail="Gemini API is currently unavailable"
+            )
     else:
         ret["isCorrect"] = match_string(guess.answer, question.answer)
     
@@ -119,8 +130,6 @@ def gemini_compare(guess, answer):
     
     result = ComparisonResult.model_validate_json(interaction.output_text)
 
-    print("GEMINI RESPONSE")
-    print(result.same_event)
     return result.same_event      
       
       
