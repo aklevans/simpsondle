@@ -12,7 +12,8 @@ export default function Clipgen() {
     middleTimestamp: "",
     endTimestamp: "",
     question: "",
-    answer: ""
+    answer: "",
+    type: "DESCRIBE"
   });
 
   const [firstVideoUrl, setFirstVideoUrl] = useState(null);
@@ -127,11 +128,12 @@ export default function Clipgen() {
       "preClipFilename": `${form.episode}-${form.startTimestamp}-${form.middleTimestamp}.mp4`,
       "postClipFilename": `${form.episode}-${form.startTimestamp}-${form.endTimestamp}.mp4`,
       "question": form.question,
-      "answer": form.answer, 
+      "answer": form.answer,
+      "type": form.type,
       "second_clip_offset": form.middleTimestamp - form.startTimestamp
     }
 
-    fetch(`http://localhost:8000/question`, {
+    fetch(`http://localhost:8001/question`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' 
@@ -227,6 +229,17 @@ export default function Clipgen() {
               onChange={updateField("answer")}
               placeholder="I call the big one Bitey."
             />
+          </div>
+          <div className="col-md-4">
+            <label className="form-label">Type</label>
+            <select
+              className="form-control"
+              value={form.type}
+              onChange={updateField("type")}
+            >
+              <option value="DESCRIBE">DESCRIBE</option>
+              <option value="CAPTION">CAPTION</option>
+            </select>
           </div>
 
           <div className="col-12">
