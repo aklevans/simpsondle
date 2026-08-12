@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from fastapi.responses import FileResponse
 from fastapi.responses import StreamingResponse
+from fastapi import Request
 from fastapi import BackgroundTasks
 from difflib import SequenceMatcher
 from pydantic import BaseModel
@@ -8,6 +9,8 @@ from models import Question
 import string
 from peewee import fn
 from typing import Optional
+from main import limiter
+
 import os
 
 from google import genai
@@ -28,9 +31,9 @@ DESCRIBE_TYPE="DESCRIBE"
 
 
 
-
+@limiter.limit("15/minute")
 @router.get("")
-async def get_quiz(questionID: Optional[str] = None):
+async def get_quiz(request: Request, questionID: Optional[str] = None):
     if(questionID):
         question = Question.get_by_id(questionID)
     else:
