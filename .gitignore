@@ -5,3 +5,5 @@
 **/.aws-sam
 **/__pycache__
 **/samconfig.toml
+**/*.mp4
+**/*.mp3

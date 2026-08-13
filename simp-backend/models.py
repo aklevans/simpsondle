@@ -6,6 +6,9 @@ class BaseModel(Model):
     class Meta:
         database=db
 
+class Type(BaseModel):
+    name=CharField(primary_key=True)
+
 class Question(BaseModel):
     season=IntegerField()
     episode_number=IntegerField()
@@ -16,4 +19,5 @@ class Question(BaseModel):
     pre_clip_filename=CharField()
     post_clip_filename=CharField()
     post_clip_offset_ms=IntegerField()
+    type=CharField()
     
