@@ -1,4 +1,5 @@
 fastapi==0.139.2
+google-genai==2.17.0
 mangum==0.21.0
 peewee==4.3.0
 psycopg2-binary==2.9.12
