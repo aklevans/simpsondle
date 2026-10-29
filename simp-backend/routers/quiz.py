@@ -9,7 +9,7 @@ from models import Question
 import string
 from peewee import fn
 from typing import Optional
-from main import limiter
+from rate_limiter import limiter
 from fastapi import HTTPException
 
 
@@ -50,6 +50,7 @@ async def get_quiz(request: Request, questionID: Optional[str] = None):
         "questionID": question.id,
         "question": question.question,
         "video_url": question.pre_clip_filename,
+        "type": question.type
     }
  
 
@@ -58,9 +59,9 @@ class Guess(BaseModel):
     answer: str
     
 
-@limiter.limit("20/minute")
 @router.post("")
-async def check_guess(guess: Guess):
+@limiter.limit("20/minute")
+async def check_guess(request: Request, guess: Guess):
     question=Question.get_by_id(guess.questionID)
 
     
