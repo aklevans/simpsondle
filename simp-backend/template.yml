@@ -22,6 +22,9 @@ Parameters:
   DbSslMode:
     Type: String
     Default: require
+  GeminiApiKey:
+    Type: String
+    NoEcho: true
 
 Resources:
   FastApiFunction:
@@ -40,6 +43,7 @@ Resources:
           DB_USER: !Ref DbUser
           DB_PASSWORD: !Ref DbPassword
           DB_SSLMODE: !Ref DbSslMode
+          GEMINI_API_KEY: !Ref GeminiApiKey
 
       Events:
         Api:
