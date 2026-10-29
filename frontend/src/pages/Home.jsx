@@ -45,6 +45,7 @@ export default function Home() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        // console.log(data);
         setQuestion(data);
       })
       .catch((err) => {
@@ -156,7 +157,7 @@ export default function Home() {
             <div className="quiz-video-wrap">
               <img src="/images/simpson_tv.png"/>
 
-              <video ref={videoRef} controls playsinline className="quiz-video">
+              <video ref={videoRef} controls playsInline className="quiz-video">
                 <source src={videoSrc} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -166,7 +167,8 @@ export default function Home() {
             {!response && (
               <form className="quiz-form" onSubmit={handleGuess}>
                 <label className="quiz-label" htmlFor="guess-input">
-                  What's the next line?
+                  {question.type == "CAPTION" && (<><span className="quiz-label-highlight">Quote</span> the next line:</>)}
+                  {question.type == "DESCRIBE" && (<><span className="quiz-label-highlight">Describe</span> what happens next:</>)}
                 </label>
                 <input
                   id="guess-input"
